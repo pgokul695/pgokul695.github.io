@@ -13,8 +13,8 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
+            background: linear-gradient(135deg, #0a1f1a 0%, #1a3a2e 100%);
+            color: #e0e0e0;
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
@@ -32,7 +32,7 @@
 
         .particle {
             position: absolute;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(109, 213, 168, 0.15);
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
         }
@@ -51,9 +51,9 @@
             align-items: center;
             text-align: center;
             position: relative;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(15, 30, 25, 0.3);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(109, 213, 168, 0.2);
         }
 
         .hero-content {
@@ -64,7 +64,7 @@
         .hero-title {
             font-size: 4rem;
             font-weight: bold;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background: linear-gradient(45deg, #6dd5a8, #4ecdc4, #45b7d1, #8fd9b6);
             background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -79,7 +79,7 @@
         .hero-subtitle {
             font-size: 1.5rem;
             margin-top: 1rem;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(180, 230, 210, 0.9);
             animation: fadeInUp 1s ease-out 1s both;
         }
 
@@ -89,7 +89,7 @@
             left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(109, 213, 168, 0.8);
             cursor: pointer;
         }
 
@@ -125,12 +125,13 @@
             top: 20px;
             right: 20px;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(15, 30, 25, 0.8);
             backdrop-filter: blur(10px);
             border-radius: 15px;
             padding: 10px;
             opacity: 0;
             animation: slideInRight 1s ease-out 2s forwards;
+            border: 1px solid rgba(109, 213, 168, 0.3);
         }
 
         nav ul {
@@ -140,7 +141,7 @@
         }
 
         nav a {
-            color: white;
+            color: #b4e6d2;
             text-decoration: none;
             padding: 8px 15px;
             border-radius: 10px;
@@ -149,8 +150,9 @@
         }
 
         nav a:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(109, 213, 168, 0.2);
             transform: translateY(-2px);
+            color: #6dd5a8;
         }
 
         @keyframes slideInRight {
@@ -184,24 +186,25 @@
         }
 
         .section-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(15, 30, 25, 0.6);
             backdrop-filter: blur(15px);
             border-radius: 20px;
             padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(109, 213, 168, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
         }
 
         .section-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            border-color: rgba(109, 213, 168, 0.5);
         }
 
         h2 {
             font-size: 2.5rem;
             margin-bottom: 30px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            background: linear-gradient(45deg, #6dd5a8, #4ecdc4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -212,7 +215,7 @@
         .about-content {
             font-size: 1.2rem;
             line-height: 1.8;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(180, 230, 210, 0.95);
             text-align: center;
         }
 
@@ -225,12 +228,12 @@
         }
 
         .skill-item {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            background: linear-gradient(135deg, rgba(15, 30, 25, 0.8), rgba(20, 40, 30, 0.6));
             border-radius: 15px;
             padding: 25px;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(109, 213, 168, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -242,7 +245,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(109, 213, 168, 0.2), transparent);
             transform: rotate(45deg);
             transition: all 0.5s ease;
             opacity: 0;
@@ -255,13 +258,17 @@
 
         .skill-item:hover {
             transform: translateY(-5px) scale(1.05);
-            border-color: rgba(255, 255, 255, 0.3);
+            border-color: rgba(109, 213, 168, 0.6);
         }
 
         .skill-item h3 {
-            color: #4ecdc4;
+            color: #6dd5a8;
             margin-bottom: 10px;
             font-size: 1.1rem;
+        }
+
+        .skill-item p {
+            color: rgba(180, 230, 210, 0.8);
         }
 
         @keyframes shimmer {
@@ -278,11 +285,11 @@
         }
 
         .project-card {
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+            background: linear-gradient(135deg, rgba(15, 30, 25, 0.8), rgba(20, 40, 30, 0.6));
             border-radius: 20px;
             padding: 30px;
             transition: all 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(109, 213, 168, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -294,7 +301,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(109, 213, 168, 0.15), transparent);
             transition: left 0.5s ease;
         }
 
@@ -304,21 +311,26 @@
 
         .project-card:hover {
             transform: translateY(-10px) rotateY(5deg);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            border-color: rgba(109, 213, 168, 0.6);
         }
 
         .project-card h3 {
-            color: #ff6b6b;
+            color: #6dd5a8;
             font-size: 1.3rem;
             margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: rgba(180, 230, 210, 0.9);
         }
 
         .project-link {
             display: inline-block;
             margin-top: 15px;
             padding: 10px 20px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            color: white;
+            background: linear-gradient(45deg, #6dd5a8, #4ecdc4);
+            color: #0a1f1a;
             text-decoration: none;
             border-radius: 25px;
             transition: all 0.3s ease;
@@ -327,7 +339,7 @@
 
         .project-link:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 10px 20px rgba(109, 213, 168, 0.4);
         }
 
         /* Contact */
@@ -339,38 +351,192 @@
         }
 
         .contact-item {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(15, 30, 25, 0.6);
             border-radius: 15px;
             padding: 25px;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(109, 213, 168, 0.3);
         }
 
         .contact-item:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(20, 40, 30, 0.8);
+            border-color: rgba(109, 213, 168, 0.6);
+        }
+
+        .contact-item h3 {
+            color: #6dd5a8;
         }
 
         .contact-item a {
-            color: #4ecdc4;
+            color: #8fd9b6;
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s ease;
         }
 
         .contact-item a:hover {
-            color: #ff6b6b;
+            color: #6dd5a8;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, rgba(15, 30, 25, 0.98), rgba(20, 40, 30, 0.98));
+            backdrop-filter: blur(20px);
+            margin: 3% auto;
+            padding: 0;
+            border: 1px solid rgba(109, 213, 168, 0.3);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            animation: slideDown 0.4s ease;
+        }
+
+        .modal-content.dark-theme {
+            background: linear-gradient(135deg, rgba(15, 30, 25, 0.98), rgba(20, 40, 30, 0.98));
+            border: 1px solid rgba(80, 120, 100, 0.3);
+        }
+
+        .modal-header {
+            padding: 30px 40px;
+            border-bottom: 1px solid rgba(109, 213, 168, 0.3);
+            position: sticky;
+            top: 0;
+            background: rgba(15, 30, 25, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+
+        .modal-header.dark-theme {
+            background: rgba(15, 30, 25, 0.98);
+            border-bottom: 1px solid rgba(80, 120, 100, 0.3);
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            color: #6dd5a8;
+            font-size: 2rem;
+            text-align: left;
+            background: none;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: #6dd5a8;
+        }
+
+        .modal-body {
+            padding: 40px;
+            color: rgba(180, 230, 210, 0.95);
+            line-height: 1.8;
+        }
+
+        .modal-body h3 {
+            color: #6dd5a8;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .dark-theme .modal-body h3 {
+            color: #6dd5a8;
+        }
+
+        .modal-body h4 {
+            color: #8fd9b6;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .dark-theme .modal-body h4 {
+            color: #8fd9b6;
+        }
+
+        .modal-body p {
+            margin-bottom: 15px;
+        }
+
+        .modal-body ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .modal-body ol li {
+            margin-bottom: 8px;
+        }
+
+        .modal-body ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .modal-body li {
+            margin-bottom: 8px;
+        }
+
+        .modal-body code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .close {
+            color: #6dd5a8;
+            float: right;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            line-height: 1;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #8fd9b6;
+            transform: rotate(90deg);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         /* Footer */
         footer {
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(10, 20, 15, 0.8);
             backdrop-filter: blur(10px);
             text-align: center;
             padding: 30px;
-            color: rgba(255, 255, 255, 0.7);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(109, 213, 168, 0.8);
+            border-top: 1px solid rgba(109, 213, 168, 0.3);
         }
 
         /* Responsive */
@@ -380,6 +546,8 @@
             nav { position: static; margin: 20px auto; width: fit-content; }
             h2 { font-size: 2rem; }
             .section-card { padding: 25px; }
+            .modal-content { width: 95%; margin: 5% auto; }
+            .modal-header, .modal-body { padding: 20px; }
         }
     </style>
 </head>
@@ -453,39 +621,53 @@
     </section>
 
     <!-- Projects Section -->
-   <section id="projects">
-    <div class="section-card">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Voxella</h3>
-                <p>An innovative voice-based AI assistant with advanced natural language processing capabilities.</p>
-                <a href="https://github.com/pgokul695/Voxella" target="_blank" class="project-link">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>Hack-n-tech</h3>
-                <p>A video compression algorithm designed specially for low bandwidth streaming for educational uses.</p>
-                <a href="https://github.com/pgokul695/Hack-n-tech" target="_blank" class="project-link">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>ASIET</h3>
-                <p>Class work done during BTech in Computer Science (Artificial Intelligence) at Adi Shankara Institute of Engineering and Technology (2023–2027).</p>
-                <a href="https://github.com/pgokul695/ASIET" target="_blank" class="project-link">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>Ayunex</h3>
-                <p>Revolutionary hybrid system combining sensor-based vitals tracking with AI-powered passive monitoring to ensure elderly safety and health—both at home and remotely.</p>
-                <a href="https://pgokul695.github.io/ElderlyMonitoring/" target="_blank" class="project-link">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>HackathonX</h3>
-                <p>This codebase was originally developed for HackathonX, a national-level cybersecurity hackathon conducted by the National Cyber Security Research Council (NCSRC) at the University of Calicut, Thenhipalam.</p>
-                <a href="https://github.com/pgokul695/Hackathonx-qualifiers" target="_blank" class="project-link">View Project</a>
+    <section id="projects">
+        <div class="section-card">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Ayunex</h3>
+                    <p>Revolutionary hybrid system combining sensor-based vitals tracking with AI-powered passive monitoring to ensure elderly safety and health—both at home and remotely.</p>
+                    <a href="https://pgokul695.github.io/ElderlyMonitoring/" target="_blank" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Arcanum AI</h3>
+                    <p>High-performance Q&A system built for HackRX 6.0. Features hybrid AI strategy with mission agent and smart batch processor, two-level caching, and comprehensive document support (PDF, DOCX, PPTX, XLSX, HTML, images with OCR).</p>
+                    <a href="#" onclick="openArcanumModal(event)" class="project-link">View Details</a>
+                </div>
+                <div class="project-card">
+                    <h3>Anti-Piracy Content Protection</h3>
+                    <p>Two-tiered anti-piracy system combining fast perceptual hash scanning with high-accuracy AI verification. Features automated detection through Telegram bot and web scraper for rapid pirated content identification and removal.</p>
+                    <a href="#" onclick="openAntiPiracyModal(event)" class="project-link">View Details</a>
+                </div>
+                <div class="project-card">
+                    <h3>CTF - Prayag '25</h3>
+                    <p>Architected and executed a 90-minute Capture The Flag cybersecurity challenge at ASIET's national-level tech fest. Designed intricate challenges, built self-contained server environment, and hosted the entire competition live.</p>
+                    <a href="https://www.linkedin.com/posts/pgokul695_cybersecurity-ctf-capturetheflag-activity-7375189522692845568-W-K0" target="_blank" class="project-link">View Details</a>
+                </div>
+                <div class="project-card">
+                    <h3>Voxella</h3>
+                    <p>Frontend interface for Ollama designed to raise awareness about locally hosted AI and its privacy advantages. Demonstrates the benefits of running AI models on personal hardware for enhanced data security.</p>
+                    <a href="https://github.com/pgokul695/Voxella" target="_blank" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Hack-n-tech</h3>
+                    <p>A video compression algorithm designed specially for low bandwidth streaming for educational uses.</p>
+                    <a href="https://github.com/pgokul695/Hack-n-tech" target="_blank" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>HackathonX</h3>
+                    <p>This codebase was originally developed for HackathonX, a national-level cybersecurity hackathon conducted by the National Cyber Security Research Council (NCSRC) at the University of Calicut, Thenhipalam.</p>
+                    <a href="https://github.com/pgokul695/Hackathonx-qualifiers" target="_blank" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>ASIET</h3>
+                    <p>Class work done during BTech in Computer Science (Artificial Intelligence) at Adi Shankara Institute of Engineering and Technology (2023–2027).</p>
+                    <a href="https://github.com/pgokul695/ASIET" target="_blank" class="project-link">View Project</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -516,6 +698,185 @@
     <footer>
         <p>&copy; 2025 Gokul P - Crafted with passion and innovation</p>
     </footer>
+
+    <!-- Arcanum AI Modal -->
+    <div id="arcanumModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeArcanumModal()">&times;</span>
+                <h2>Arcanum AI - Intelligent Query Processor</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Built for HackRX 6.0 Hackathon</strong></p>
+                <p>A high-performance, resilient, and scalable Q&A system crafted late into the night from Aluva, Kerala. This project leverages a sophisticated hybrid AI strategy to deliver accurate answers from a vast range of document types.</p>
+                
+                <h3>🚀 Key Features</h3>
+                
+                <h4>Hybrid AI Strategy</h4>
+                <p>Automatically selects the best engine for the job:</p>
+                <ul>
+                    <li><strong>Mission Agent</strong>: A focused, single-loop agent for individual questions requiring deep reasoning</li>
+                    <li><strong>Smart Batch Processor</strong>: An efficient engine for handling multiple questions, using different models based on query complexity</li>
+                </ul>
+
+                <h4>Advanced Caching System</h4>
+                <p>A two-level caching system that drastically reduces latency on repeated requests:</p>
+                <ul>
+                    <li><strong>L1 In-Memory Cache</strong>: For instant access to the most recently used document indexes</li>
+                    <li><strong>L2 PostgreSQL Cache</strong>: For persistent storage of document indexes, making first-time processing cost a one-off event</li>
+                </ul>
+
+                <h4>Resilient LLM Integration</h4>
+                <p>Features automatic failover from more powerful models (Gemini 2.5 flash) to faster models (Gemini 2.0 Flash) to ensure high availability.</p>
+
+                <h4>Comprehensive Document Support</h4>
+                <p>Processes a wide array of formats:</p>
+                <ul>
+                    <li>PDFs (.pdf)</li>
+                    <li>Word Documents (.docx)</li>
+                    <li>PowerPoint Presentations (.pptx)</li>
+                    <li>Excel Spreadsheets (.xlsx)</li>
+                    <li>Web Pages (.html)</li>
+                    <li>Images with text via OCR (.png, .jpg)</li>
+                </ul>
+
+                <h4>Additional Features</h4>
+                <ul>
+                    <li><strong>Content-Aware Routing</strong>: The batch processor analyzes query content for sensitive keywords and routes to the appropriate model</li>
+                    <li><strong>Production-Ready</strong>: Easy deployment with Gunicorn and professional Docker deployment options</li>
+                </ul>
+
+                <h3>🛠️ Technology Stack</h3>
+                <ul>
+                    <li><strong>Backend Framework</strong>: FastAPI</li>
+                    <li><strong>Web Server</strong>: Gunicorn + Uvicorn</li>
+                    <li><strong>Language Model</strong>: Google Gemini (1.5 Pro & 1.5 Flash)</li>
+                    <li><strong>Embeddings</strong>: SentenceTransformers (all-MiniLM-L6-v2 / all-mpnet-base-v2)</li>
+                    <li><strong>Vector Search</strong>: Facebook AI Similarity Search (FAISS)</li>
+                    <li><strong>Database</strong>: PostgreSQL</li>
+                    <li><strong>Document Parsing</strong>: PyMuPDF, python-docx, python-pptx, openpyxl, BeautifulSoup4</li>
+                    <li><strong>OCR</strong>: Tesseract</li>
+                    <li><strong>Deployment</strong>: Docker</li>
+                </ul>
+
+                <h3>⚙️ System Architecture</h3>
+                <p>The application follows a modular, decoupled architecture:</p>
+                <ul>
+                    <li>User Request → FastAPI Web Server (Gunicorn + Uvicorn)</li>
+                    <li>Master Processor (Orchestrator) routes to:</li>
+                    <li style="margin-left: 20px;">Single Question → Mission Agent → Gemini API</li>
+                    <li style="margin-left: 20px;">Multiple Questions → Smart Batch Processor → Gemini API (Pro/Flash)</li>
+                    <li>Two-Level Cache (In-Memory + PostgreSQL)</li>
+                    <li>Cache Miss → Document Processor → Vector Engine (FAISS) → Cache Write</li>
+                </ul>
+
+                <h3>🚀 Performance Features</h3>
+                <ul>
+                    <li><strong>Intelligent Routing</strong>: Automatically selects the most appropriate processing engine</li>
+                    <li><strong>Multi-level Caching</strong>: Reduces processing time for repeated queries</li>
+                    <li><strong>Batch Processing</strong>: Efficient handling of multiple questions</li>
+                    <li><strong>Failover Mechanism</strong>: Automatic fallback to ensure high availability</li>
+                    <li><strong>Vector Search</strong>: Fast similarity search using FAISS</li>
+                </ul>
+
+                <p style="margin-top: 30px; text-align: center; font-style: italic; color: #6dd5a8;">
+                    Private Repository - Comprehensive technical documentation available upon request
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Anti-Piracy Modal -->
+    <div id="antiPiracyModal" class="modal">
+        <div class="modal-content dark-theme">
+            <div class="modal-header dark-theme">
+                <span class="close" onclick="closeAntiPiracyModal()">&times;</span>
+                <h2>CineShield - Anti-Piracy Content Protection</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Team Members:</strong></p>
+                <ul style="margin-bottom: 20px;">
+                    <li><strong>Gokul P</strong> - Lead, AI & Backend</li>
+                    <li><strong>Devika P Sajith</strong> - Backend Engineer</li>
+                    <li><strong>Ashna Thajudheen</strong> - Front-End</li>
+                </ul>
+
+                <h3>🎯 Elevator Pitch</h3>
+                <p>A proof-of-concept anti-piracy system that uses a two-tiered analysis workflow. It combines a fast, low-cost perceptual hash (the "Sieve") for broad scanning with a powerful, high-accuracy AI model (the "Microscope") for final verification, ensuring both scalability and efficiency in detecting modified video content.</p>
+
+                <h3>🚀 Key Features</h3>
+                <ul>
+                    <li><strong>Two-Tiered Detection System</strong>: Fast perceptual hashing combined with deep learning verification</li>
+                    <li><strong>Automated Scanning</strong>: Telegram bot and web scraper for continuous monitoring</li>
+                    <li><strong>Cross-Platform Support</strong>: Windows, Android, Linux (Debian/Ubuntu), and Universal AppImage</li>
+                    <li><strong>Real-Time Detection</strong>: Instant results for video analysis</li>
+                    <li><strong>Rapid Response</strong>: Quick identification and removal of pirated content</li>
+                </ul>
+
+                <h3>🏗️ Architecture Overview</h3>
+                
+                <h4>Two-Tiered Detection System</h4>
+                <ul>
+                    <li><strong>Tier 1 (Sieve)</strong>: Fast perceptual hashing for initial broad scanning</li>
+                    <li><strong>Tier 2 (Microscope)</strong>: AI-powered deep analysis for final verification</li>
+                </ul>
+
+                <h4>Service Distribution</h4>
+                <ul>
+                    <li><strong>AI Engine</strong>: Local server combining Tier 1 and Tier 2 (exposed via Ngrok)</li>
+                    <li><strong>Middleware</strong>: Flask server orchestrating workflow and managing results</li>
+                    <li><strong>Front-End</strong>: Firebase-hosted web app + Flutter cross-platform app</li>
+                </ul>
+
+                <h3>⚙️ Workflow</h3>
+                <ol>
+                    <li>User uploads video through the front-end application</li>
+                    <li>Middleware receives the request and forwards it to the AI Engine</li>
+                    <li>AI Engine performs Tier 1 (perceptual hash) analysis</li>
+                    <li>If Tier 1 detects potential matches, Tier 2 (deep learning) verification is triggered</li>
+                    <li>Results are returned through the middleware to the front-end</li>
+                </ol>
+
+                <h3>🛠️ Technology Stack</h3>
+                <ul>
+                    <li><strong>Backend</strong>: Python 3.8+, Flask</li>
+                    <li><strong>AI/ML</strong>: Perceptual Hashing, Deep Learning Models</li>
+                    <li><strong>Front-End</strong>: Flutter SDK (cross-platform)</li>
+                    <li><strong>Hosting</strong>: Firebase (web), Local server with Ngrok tunneling</li>
+                    <li><strong>Automation</strong>: Telegram Bot API, Web Scraping</li>
+                </ul>
+
+                <h3>📦 Available Platforms</h3>
+                <ul>
+                    <li><strong>Windows (x86)</strong>: Desktop application</li>
+                    <li><strong>Android</strong>: Mobile APK</li>
+                    <li><strong>Linux (Debian/Ubuntu)</strong>: .deb package</li>
+                    <li><strong>Linux (Universal)</strong>: AppImage for all distributions</li>
+                </ul>
+
+                <h3>✨ Latest Release - v1.0.0</h3>
+                <p>First stable public release featuring:</p>
+                <ul>
+                    <li>Initial cross-platform support</li>
+                    <li>Two-tiered piracy detection system</li>
+                    <li>User-friendly interface for video analysis</li>
+                    <li>Real-time detection results</li>
+                </ul>
+
+                <h3>🧪 Testing Methodology</h3>
+                <p>Manual testing performed with:</p>
+                <ul>
+                    <li><strong>Positive Test</strong>: Modified copies of source videos for match confirmation</li>
+                    <li><strong>Negative Test</strong>: Unrelated videos to verify correct dismissal</li>
+                    <li><strong>Edge Cases</strong>: Various modifications (cropping, filters, watermarks)</li>
+                </ul>
+
+                <p style="margin-top: 30px; text-align: center; font-style: italic; color: #6dd5a8;">
+                    Private Repository - 48-hour proof-of-concept project
+                </p>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Create animated background particles
@@ -548,6 +909,49 @@
                 behavior: 'smooth'
             });
         }
+
+        // Modal functions
+        function openArcanumModal(event) {
+            event.preventDefault();
+            document.getElementById('arcanumModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeArcanumModal() {
+            document.getElementById('arcanumModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function openAntiPiracyModal(event) {
+            event.preventDefault();
+            document.getElementById('antiPiracyModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAntiPiracyModal() {
+            document.getElementById('antiPiracyModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const arcanumModal = document.getElementById('arcanumModal');
+            const antiPiracyModal = document.getElementById('antiPiracyModal');
+            if (event.target == arcanumModal) {
+                closeArcanumModal();
+            }
+            if (event.target == antiPiracyModal) {
+                closeAntiPiracyModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeArcanumModal();
+                closeAntiPiracyModal();
+            }
+        });
 
         // Intersection Observer for scroll animations
         const observerOptions = {
