@@ -74,13 +74,16 @@
             overflow: hidden;
             border-right: 3px solid;
             width: 0;
+            margin: 0 auto;
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin-top: 1rem;
+            max-width: 800px;
             color: rgba(180, 230, 210, 0.9);
             animation: fadeInUp 1s ease-out 1s both;
+            line-height: 1.6;
         }
 
         .scroll-indicator {
@@ -542,8 +545,9 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero-title { font-size: 2.5rem; }
-            .hero-subtitle { font-size: 1.2rem; }
+            .hero-subtitle { font-size: 0.95rem; padding: 0 20px; }
             nav { position: static; margin: 20px auto; width: fit-content; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
             h2 { font-size: 2rem; }
             .section-card { padding: 25px; }
             .modal-content { width: 95%; margin: 5% auto; }
@@ -560,8 +564,10 @@
         <ul>
             <li><a href="#about" onclick="scrollTo('about')">About</a></li>
             <li><a href="#skills" onclick="scrollTo('skills')">Skills</a></li>
-            <li><a href="#academics" onclick="scrollTo('academics')">Academics</a></li>
             <li><a href="#projects" onclick="scrollTo('projects')">Projects</a></li>
+            <li><a href="#academics" onclick="scrollTo('academics')">Academics</a></li>
+            <li><a href="#certifications" onclick="scrollTo('certifications')">Certifications</a></li>
+            <li><a href="#achievements" onclick="scrollTo('achievements')">Achievements</a></li>
             <li><a href="#contact" onclick="scrollTo('contact')">Contact</a></li>
         </ul>
     </nav>
@@ -570,7 +576,7 @@
     <header>
         <div class="hero-content">
             <h1 class="hero-title">Gokul P</h1>
-            <p class="hero-subtitle">Computer Science & AI Enthusiast</p>
+            <p class="hero-subtitle">Technical Architect with experience in secure infrastructure deployment and management, specializing in bridging the gap between AI model development and real-world system integration for IoT and competitive Cybersecurity platforms.</p>
         </div>
         <div class="scroll-indicator" onclick="scrollTo('about')">
             <div style="font-size: 2rem;">↓</div>
@@ -585,9 +591,9 @@
             <div class="about-content">
                 <p style="margin-bottom: 20px;">I'm a passionate B.Tech Computer Science (Artificial Intelligence) student at Adi Shankara Institute of Engineering and Technology, Kerala, with a strong focus on building practical, user-centered innovations.</p>
                 
-                <p style="margin-bottom: 20px;">As a <strong>top 5% NPTEL performer</strong> and <strong>team leader</strong>, I've delivered real-world projects spanning healthcare technology, media processing, conversational AI, and cybersecurity. My work includes leading the development of <strong>Ayunex</strong>, an early-stage startup focused on AI-powered elderly safety systems.</p>
+                <p style="margin-bottom: 20px;">As a <strong>top 5% NPTEL performer</strong> and <strong>team leader</strong>, I've delivered real-world projects spanning healthcare technology, media processing, conversational AI, and cybersecurity. My work includes leading the development of <strong>Ayunex</strong>, an early-stage startup focused on AI-powered elderly safety systems, and being shortlisted for prestigious programs like the <strong>AICTE Productization Fellowship</strong> and <strong>YUKTI Innovation Challenge 2025</strong>.</p>
                 
-                <p style="margin-bottom: 20px;">I thrive in building scalable full-stack solutions, IoT hardware prototypes, and DevOps infrastructure. From architecting national-level CTF competitions to achieving <strong>Global Rank #376 in IEEE Xtreme 17.0</strong>, I'm committed to pushing the boundaries of technology.</p>
+                <p style="margin-bottom: 20px;">I thrive in building scalable full-stack solutions, IoT hardware prototypes, and DevOps infrastructure. From architecting national-level CTF competitions to completing <strong>Stanford's Machine Learning Specialization</strong>, I'm committed to pushing the boundaries of technology through continuous learning and practical application.</p>
                 
                 <p>When I'm not coding, you'll find me maintaining my home lab with virtualized servers, Docker containers, and enterprise-grade monitoring tools—constantly learning and innovating.</p>
             </div>
@@ -598,46 +604,235 @@
     <section id="skills">
         <div class="section-card">
             <h2>Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <h3>Programming Languages</h3>
-                    <p>C, C++, Java, Python, JavaScript</p>
+            
+            <!-- Key Skills (Always Visible) -->
+            <!-- Machine Learning & AI -->
+            <div style="margin-bottom: 35px;">
+                <h3 style="color: #6dd5a8; font-size: 1.3rem; margin-bottom: 15px; text-align: left;">Machine Learning & Artificial Intelligence</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h3>Machine Learning</h3>
+                        <p>Supervised & Unsupervised Learning, Reinforcement Learning, ML Algorithms</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Artificial Intelligence</h3>
+                        <p>AI Fundamentals, Ethical AI, Computer Vision</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Data Analytics</h3>
+                        <p>Data Analysis, Data Visualization, Data Science</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>AI Tools & Platforms</h3>
+                        <p>IBM Watson, Watson Studio, OpenCV</p>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <h3>Web Development</h3>
-                    <p>React.js, Node.js, Tailwind CSS, Full-stack development</p>
+            </div>
+
+            <!-- Programming Languages -->
+            <div style="margin-bottom: 35px;">
+                <h3 style="color: #6dd5a8; font-size: 1.3rem; margin-bottom: 15px; text-align: left;">Programming Languages</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h3>Python</h3>
+                        <p>Problem Solving, Scripting, ML/AI Development</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Java</h3>
+                        <p>OOP, JDBC, Java Swing, Desktop Applications</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>C & C++</h3>
+                        <p>System Programming, Game Development, DSA</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>JavaScript</h3>
+                        <p>Web Development, Frontend & Backend</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>HTML/CSS</h3>
+                        <p>Web Design, Responsive Layouts</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>SQL</h3>
+                        <p>Database Queries, Data Management</p>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <h3>AI & Machine Learning</h3>
-                    <p>AI/ML fundamentals, Data Science, Computer Vision (OpenCV)</p>
+            </div>
+
+            <!-- Web Development & Full-Stack -->
+            <div style="margin-bottom: 35px;">
+                <h3 style="color: #6dd5a8; font-size: 1.3rem; margin-bottom: 15px; text-align: left;">Web Development & Full-Stack</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h3>Frontend Development</h3>
+                        <p>React.js, JavaScript, Responsive Design</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Backend Development</h3>
+                        <p>Node.js, API Development, REST APIs</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Full-Stack Development</h3>
+                        <p>End-to-end Web Applications, Hosting & Deployment</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Web Technologies</h3>
+                        <p>Tailwind CSS, Data Pipelines</p>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <h3>Database & Backend</h3>
-                    <p>MySQL, DBMS, API development, Data pipelines</p>
+            </div>
+
+            <!-- DevOps & System Administration -->
+            <div style="margin-bottom: 35px;">
+                <h3 style="color: #6dd5a8; font-size: 1.3rem; margin-bottom: 15px; text-align: left;">DevOps & System Administration</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h3>Linux Systems</h3>
+                        <p>Server Administration, Bash Scripting</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>IT Operations</h3>
+                        <p>System Maintenance, Infrastructure Management</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Containerization</h3>
+                        <p>Docker, Container Orchestration</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Automation & Deployment</h3>
+                        <p>Ansible, Cloud Deployment, CI/CD</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Monitoring Tools</h3>
+                        <p>Prometheus, Grafana, System Monitoring</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Version Control</h3>
+                        <p>Git, GitHub, Collaborative Development</p>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <h3>DevOps & Cloud</h3>
-                    <p>Docker, Linux servers, Bash scripting, Ansible, Cloud deployment</p>
+            </div>
+
+            <!-- Expandable Button -->
+            <div style="text-align: center; margin: 30px 0 20px 0;">
+                <button id="toggleSkills" onclick="toggleSkills()" style="background: linear-gradient(45deg, #6dd5a8, #4ecdc4); color: #0a1f1a; border: none; padding: 12px 30px; border-radius: 25px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(109, 213, 168, 0.3);">
+                    Show More Skills ▼
+                </button>
+            </div>
+
+            <!-- Additional Skills (Initially Hidden) -->
+            <div id="additionalSkills" style="display: none; overflow: hidden; transition: all 0.5s ease;">
+                
+                <!-- Computer Science Fundamentals -->
+                <div style="margin-bottom: 35px;">
+                    <h3 style="color: #6dd5a8; font-size: 1.3rem; margin-bottom: 15px; text-align: left;">Computer Science Fundamentals</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <h3>Data Structures & Algorithms</h3>
+                            <p>Problem Solving, Optimization</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Object-Oriented Programming</h3>
+                            <p>Design Patterns, Code Architecture</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Operating Systems</h3>
+                            <p>System Architecture, Process Management</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Databases</h3>
+                            <p>DBMS, MySQL, Database Design</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Computer Architecture</h3>
+                            <p>Hardware Organization, System Design</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Computer Networking</h3>
+                            <p>Network Protocols, Architecture</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Theory of Computation</h3>
+                            <p>Automata, Formal Languages</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <h3>IoT & Hardware</h3>
-                    <p>Hardware prototyping, Sensor integration, Robotics</p>
+
+                <!-- Hardware & IoT -->
+                <div style="margin-bottom: 35px;">
+                    <h3 style="color: #6dd5a8; font-size: 1.3rem; margin-bottom: 15px; text-align: left;">Hardware & IoT</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <h3>Hardware Prototyping</h3>
+                            <p>IoT Devices, Sensor Integration</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Robotics</h3>
+                            <p>Hardware-Software Integration</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Computer Maintenance</h3>
+                            <p>Hardware Troubleshooting, System Repair</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <h3>Cybersecurity</h3>
-                    <p>Ethical hacking, Vulnerability analysis, Security testing</p>
+
+                <!-- Cybersecurity -->
+                <div style="margin-bottom: 35px;">
+                    <h3 style="color: #6dd5a8; font-size: 1.3rem; margin-bottom: 15px; text-align: left;">Cybersecurity</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <h3>Ethical Hacking</h3>
+                            <p>Penetration Testing, CTF Competitions</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Security Testing</h3>
+                            <p>Vulnerability Analysis, Security Audits</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Network Security</h3>
+                            <p>VPN Servers, Secure Infrastructure</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <h3>Tools & Technologies</h3>
-                    <p>Git, GitHub, Prometheus, Grafana, VPN servers</p>
+
+                <!-- Project Management & Leadership -->
+                <div style="margin-bottom: 35px;">
+                    <h3 style="color: #6dd5a8; font-size: 1.3rem; margin-bottom: 15px; text-align: left;">Project Management & Leadership</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <h3>Technical Project Leadership</h3>
+                            <p>Team Management, Project Planning</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Software Project Management</h3>
+                            <p>Agile Methodologies, Development Lifecycle</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Communication & Collaboration</h3>
+                            <p>Team Leadership, Problem-solving</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <h3>Core CS Concepts</h3>
-                    <p>OOP, DSA, Operating Systems, Data Analytics</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Leadership & Soft Skills</h3>
-                    <p>Team leadership, Communication, Problem-solving, Adaptability</p>
+
+                <!-- Creative & Other Skills -->
+                <div>
+                    <h3 style="color: #6dd5a8; font-size: 1.3rem; margin-bottom: 15px; text-align: left;">Creative & Other Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <h3>Game Development</h3>
+                            <p>Game Design, Game Testing, Scratch</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Problem Solving</h3>
+                            <p>Algorithmic Thinking, Innovation</p>
+                        </div>
+                        <div class="skill-item">
+                            <h3>Adaptability</h3>
+                            <p>Quick Learning, Versatile Skill Set</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -662,6 +857,11 @@
                     <h3>Anti-Piracy Content Protection</h3>
                     <p>Two-tiered anti-piracy system combining fast perceptual hash scanning with high-accuracy AI verification. Features automated detection through Telegram bot and web scraper for rapid pirated content identification and removal.</p>
                     <a href="#" onclick="openAntiPiracyModal(event)" class="project-link">View Details</a>
+                </div>
+                <div class="project-card">
+                    <h3>Bastion</h3>
+                    <p>Privacy-focused GNOME Shell extension that prevents DNS leaks and handles Captive Portals. Features Fortress Mode for strict DNS enforcement with DoT encryption, and Airlock Mode for seamless hotel/airport Wi-Fi login pages.</p>
+                    <a href="https://github.com/pgokul695/Bastion" target="_blank" class="project-link">View Project</a>
                 </div>
                 <div class="project-card">
                     <h3>CTF - Prayag '25</h3>
@@ -691,7 +891,8 @@
             </div>
         </div>
     </section>
-    <!-- Academic Excellence Section -->
+    
+    <!-- Academics Section -->
     <section id="academics">
         <div class="section-card">
             <h2>Academic Excellence</h2>
@@ -712,24 +913,185 @@
                         <p style="font-size: 0.9rem; opacity: 0.8;">Up to Semester 4</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="section-card">
+            <h2>Licenses & Certifications</h2>
+            <div class="about-content">
+                <!-- Featured Certifications (Always Visible) -->
+                <ul style="text-align: left; max-width: 900px; margin: 0 auto; list-style: none; padding: 0;">
+                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
+                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Machine Learning Specialization</strong>
+                        <p style="margin: 5px 0; opacity: 0.9;">Stanford University & DeepLearning.AI</p>
+                        <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Issued Dec 2025</p>
+                        <p style="margin: 10px 0 0 0; font-size: 0.9rem;"><em>Skills: Supervised Learning, Unsupervised Learning, Machine Learning Algorithms, Reinforcement Learning</em></p>
+                    </li>
+                    
+                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
+                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Fundamentals of Artificial Intelligence</strong>
+                        <p style="margin: 5px 0; opacity: 0.9;">NPTEL - Elite + Silver (Top 5%)</p>
+                        <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Issued Nov 2025 • Credential ID: NPTEL25GE55S1265800468</p>
+                        <p style="margin: 10px 0 0 0; font-size: 0.9rem;"><em>Skills: Machine Learning, Artificial Intelligence (AI)</em></p>
+                    </li>
+                    
+                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
+                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Joy of Computing using Python</strong>
+                        <p style="margin: 5px 0; opacity: 0.9;">NPTEL - Elite + Silver (Top 5%)</p>
+                        <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Issued Apr 2025 • Credential ID: NPTEL25CS69S1054100101</p>
+                        <p style="margin: 10px 0 0 0; font-size: 0.9rem;"><em>Skills: Problem Solving, Python (Programming Language)</em></p>
+                    </li>
+                </ul>
 
-                <div style="margin-top: 40px;">
-                    <h3 style="color: #6dd5a8; margin-bottom: 20px; font-size: 1.5rem;">🏆 Certifications & Honors</h3>
-                    <ul style="text-align: left; max-width: 700px; margin: 0 auto; list-style: none; padding: 0;">
-                         <li style="padding: 15px; margin-bottom: 10px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
-                            <strong>NPTEL Elite + Silver</strong> - Fundamentals of Artificial Intelligence (Top 5%)
+                <!-- Expandable Section -->
+                <div style="text-align: center; margin: 30px 0 20px 0;">
+                    <button id="toggleCerts" onclick="toggleCertificates()" style="background: linear-gradient(45deg, #6dd5a8, #4ecdc4); color: #0a1f1a; border: none; padding: 12px 30px; border-radius: 25px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(109, 213, 168, 0.3);">
+                        Show All Certifications ▼
+                    </button>
+                </div>
+
+                <!-- Additional Certifications (Initially Hidden) -->
+                <div id="additionalCerts" style="display: none; max-width: 900px; margin: 0 auto; overflow: hidden; transition: all 0.5s ease;">
+                    <ul style="text-align: left; list-style: none; padding: 0;">
+                        <li style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
+                            <strong style="color: #8fd9b6;">Advanced Learning Algorithms</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">DeepLearning.AI</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Issued Dec 2025 • Credential ID: 26YJW0MY61C7</p>
+                            <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>Skills: Machine Learning Algorithms, Machine Learning</em></p>
                         </li>
-                        <li style="padding: 15px; margin-bottom: 10px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
-                            <strong>NPTEL Elite + Silver</strong> - The Joy of Computing Using Python (Top 5%)
+                        
+                        <li style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
+                            <strong style="color: #8fd9b6;">Machine Learning</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">Stanford University</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Issued Dec 2025 • Credential ID: N0UO1P0O4H9Q</p>
+                            <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>Skills: Machine Learning, Machine Learning Algorithms, Supervised Learning, Unsupervised Learning</em></p>
                         </li>
-                        <li style="padding: 15px; margin-bottom: 10px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
-                            <strong>NPTEL Elite</strong> - Programming in Java
+                        
+                        <li style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
+                            <strong style="color: #8fd9b6;">Unsupervised Learning, Recommenders, Reinforcement Learning</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">DeepLearning.AI</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Issued Dec 2025 • Credential ID: YQSG4115W6EV</p>
+                            <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>Skills: Unsupervised Learning, Machine Learning, Machine Learning Algorithms</em></p>
                         </li>
-                        <li style="padding: 15px; margin-bottom: 10px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
-                            <strong>NPTEL Elite</strong> - Introduction to C Programming
+                        
+                        <li style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
+                            <strong style="color: #8fd9b6;">Artificial Intelligence Fundamentals</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">IBM</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Issued Nov 2025 • Credential ID: 428c5bdc-9a27-4a35-ba1c-dad77e1a6a7d</p>
+                            <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>Skills: Ethical AI, Watson Studio, Artificial Intelligence (AI), IBM Watson</em></p>
+                        </li>
+                        
+                        <li style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
+                            <strong style="color: #8fd9b6;">Data Analytics for Machine Learning</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">IBM</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Issued Nov 2025 • Credential ID: 3a98a411-10b3-4c6c-9eea-8a72f9aa10d1</p>
+                            <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>Skills: Watson Studio, Data Analysis, Data Visualization</em></p>
+                        </li>
+                        
+                        <li style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
+                            <strong style="color: #8fd9b6;">Machine Learning Methods and Tools</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">IBM</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Issued Nov 2025 • Credential ID: 256bc080-4fc1-4e60-97c4-a041c943fa7e</p>
+                            <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>Skills: Machine Learning, Machine Learning Algorithms</em></p>
+                        </li>
+                        
+                        <li style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
+                            <strong style="color: #8fd9b6;">Supervised Machine Learning: Regression and Classification</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">DeepLearning.AI</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Issued Nov 2025 • Credential ID: OZL0BTQTG23D</p>
+                            <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>Skills: Machine Learning, Supervised Learning</em></p>
+                        </li>
+                        
+                        <li style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
+                            <strong style="color: #8fd9b6;">Learning REST APIs</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">LinkedIn</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Issued Jul 2025 • Credential ID: e159514f79d80acc348d1ca6b099810f8df19ebb7e2d2210b42fbf75c1cd9dcc</p>
+                        </li>
+                        
+                        <li style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
+                            <strong style="color: #8fd9b6;">React: Creating and Hosting a Full-Stack Site</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">LinkedIn</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Issued Jul 2025</p>
+                            <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>Skills: Web Development, Full-Stack Development, React.js, JavaScript</em></p>
+                        </li>
+                        
+                        <li style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
+                            <strong style="color: #8fd9b6;">Programming in Java</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">NPTEL</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Issued Oct 2024 • Credential ID: NPTEL24CS105S650800225</p>
+                            <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>Skills: Java Database Connectivity (JDBC), Java, Java Swing, Object-Oriented Programming (OOP)</em></p>
+                        </li>
+                        
+                        <li style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
+                            <strong style="color: #8fd9b6;">Programming in Java</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">NPTEL</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Issued Oct 2024 • Credential ID: NPTEL24CS105S650800225</p>
+                            <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>Skills: Java Database Connectivity (JDBC), Java, Java Swing, Object-Oriented Programming (OOP)</em></p>
+                        </li>
+                        
+                        <li style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;">
+                            <strong style="color: #8fd9b6;">Introduction to Programming in C</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">NPTEL</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Issued Mar 2024 • Credential ID: NPTEL24CS02S3486000098</p>
+                            <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>Skills: C (Programming Language), Programming</em></p>
                         </li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="section-card">
+            <h2>Achievements</h2>
+            <div class="about-content">
+                <ul style="text-align: left; max-width: 900px; margin: 0 auto; list-style: none; padding: 0;">
+                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
+                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Completed Machine Learning Specialization</strong>
+                        <p style="margin: 8px 0 0 0; opacity: 0.9;">Stanford University & DeepLearning.AI - December 2025</p>
+                        <p style="margin: 8px 0 0 0; font-size: 0.9rem;">Comprehensive program covering supervised learning, unsupervised learning, and reinforcement learning algorithms</p>
+                    </li>
+                    
+                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
+                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Shortlisted for AICTE Productization Fellowship (APF) 2025</strong>
+                        <p style="margin: 8px 0 0 0; opacity: 0.9;">All India Council for Technical Education</p>
+                        <p style="margin: 8px 0 0 0; font-size: 0.9rem;">Selected for the AICTE Productization Fellowship program focused on transforming innovative ideas into market-ready products</p>
+                    </li>
+                    
+                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
+                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Shortlisted for YUKTI Innovation Challenge (YIC) 2025</strong>
+                        <p style="margin: 8px 0 0 0; opacity: 0.9;">Ministry of Education's Innovation Cell</p>
+                        <p style="margin: 8px 0 0 0; font-size: 0.9rem;">Recognized for innovative project proposal in national-level innovation challenge</p>
+                    </li>
+                    
+                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
+                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Top 5% NPTEL Performer</strong>
+                        <p style="margin: 8px 0 0 0; opacity: 0.9;">Elite + Silver Certification</p>
+                        <p style="margin: 8px 0 0 0; font-size: 0.9rem;">Achieved top 5% ranking in NPTEL's Joy of Computing Using Python and Fundamentals of Artificial Intelligence courses</p>
+                    </li>
+                    
+                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
+                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Semi-Finalist in National Cybersecurity Hackathon</strong>
+                        <p style="margin: 8px 0 0 0; opacity: 0.9;">HackathonX - National Cyber Security Research Council</p>
+                        <p style="margin: 8px 0 0 0; font-size: 0.9rem;">Competed in national-level cybersecurity hackathon conducted by NCSRC at University of Calicut</p>
+                    </li>
+                    
+                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
+                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Global Rank #376 in IEEE Xtreme 17.0</strong>
+                        <p style="margin: 8px 0 0 0; opacity: 0.9;">IEEE International Programming Competition</p>
+                        <p style="margin: 8px 0 0 0; font-size: 0.9rem;">Achieved top global ranking in 24-hour competitive programming challenge</p>
+                    </li>
+                    
+                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
+                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Academic Excellence - SGPA 9.59</strong>
+                        <p style="margin: 8px 0 0 0; opacity: 0.9;">4th Semester, B.Tech CSE (AI)</p>
+                        <p style="margin: 8px 0 0 0; font-size: 0.9rem;">Demonstrated outstanding academic performance in Computer Science and Artificial Intelligence program</p>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
@@ -1033,6 +1395,48 @@
             }
         });
 
+        // Toggle certificates visibility
+        function toggleCertificates() {
+            const additionalCerts = document.getElementById('additionalCerts');
+            const toggleBtn = document.getElementById('toggleCerts');
+            
+            if (additionalCerts.style.display === 'none' || additionalCerts.style.display === '') {
+                additionalCerts.style.display = 'block';
+                toggleBtn.innerHTML = 'Show Less Certifications ▲';
+                toggleBtn.style.background = 'linear-gradient(45deg, #4ecdc4, #45b7d1)';
+                
+                // Smooth scroll to show the expanded content
+                setTimeout(() => {
+                    additionalCerts.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            } else {
+                additionalCerts.style.display = 'none';
+                toggleBtn.innerHTML = 'Show All Certifications ▼';
+                toggleBtn.style.background = 'linear-gradient(45deg, #6dd5a8, #4ecdc4)';
+            }
+        }
+
+        // Toggle skills visibility
+        function toggleSkills() {
+            const additionalSkills = document.getElementById('additionalSkills');
+            const toggleBtn = document.getElementById('toggleSkills');
+            
+            if (additionalSkills.style.display === 'none' || additionalSkills.style.display === '') {
+                additionalSkills.style.display = 'block';
+                toggleBtn.innerHTML = 'Show Less Skills ▲';
+                toggleBtn.style.background = 'linear-gradient(45deg, #4ecdc4, #45b7d1)';
+                
+                // Smooth scroll to show the expanded content
+                setTimeout(() => {
+                    additionalSkills.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            } else {
+                additionalSkills.style.display = 'none';
+                toggleBtn.innerHTML = 'Show More Skills ▼';
+                toggleBtn.style.background = 'linear-gradient(45deg, #6dd5a8, #4ecdc4)';
+            }
+        }
+
         // Intersection Observer for scroll animations
         const observerOptions = {
             threshold: 0.1,
@@ -1046,35 +1450,6 @@
                 }
             });
         }, observerOptions);
-
-        // Mouse move parallax effect for cards
-        document.addEventListener('mousemove', (e) => {
-            const cards = document.querySelectorAll('.section-card, .skill-item, .project-card');
-            const mouseX = e.clientX;
-            const mouseY = e.clientY;
-
-            cards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const cardCenterX = rect.left + rect.width / 2;
-                const cardCenterY = rect.top + rect.height / 2;
-                
-                const deltaX = (mouseX - cardCenterX) * 0.01;
-                const deltaY = (mouseY - cardCenterY) * 0.01;
-                
-                card.style.transform = `translateX(${deltaX}px) translateY(${deltaY}px)`;
-            });
-        });
-
-        // Add floating animation to skill items on hover
-        document.querySelectorAll('.skill-item').forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                item.style.animation = 'float 2s ease-in-out infinite';
-            });
-            
-            item.addEventListener('mouseleave', () => {
-                item.style.animation = '';
-            });
-        });
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
