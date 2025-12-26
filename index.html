@@ -601,6 +601,120 @@
             .modal-content { width: 95%; margin: 5% auto; }
             .modal-header, .modal-body { padding: 20px; }
         }
+
+        /* Tabs inside modal for Experience */
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            background: rgba(109, 213, 168, 0.08);
+            color: #8fd9b6;
+            border: 1px solid rgba(109, 213, 168, 0.18);
+            padding: 8px 14px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .tab-button:hover { transform: translateY(-2px); }
+
+        .tab-button.active {
+            background: linear-gradient(45deg, #6dd5a8, #4ecdc4);
+            color: #07241e;
+        }
+
+        .tab-button.locked {
+            opacity: 0.6;
+            position: relative;
+        }
+
+        .tab-content {
+            background: rgba(15, 30, 25, 0.6);
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(109, 213, 168, 0.12);
+            color: rgba(180, 230, 210, 0.95);
+            line-height: 1.6;
+        }
+
+        .locked-note {
+            color: #e6f7ee;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        /* Expandable Achievement Cards */
+        .achievement-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(109, 213, 168, 0.2);
+        }
+
+        .achievement-card .card-summary {
+            display: block;
+        }
+
+        .achievement-card .card-details {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(109, 213, 168, 0.2);
+            animation: slideDown 0.3s ease;
+        }
+
+        .achievement-card.expanded .card-details {
+            display: block;
+        }
+
+        .achievement-card .expand-indicator {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: rgba(109, 213, 168, 0.6);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-card.expanded .expand-indicator {
+            transform: rotate(180deg);
+        }
+
+        .achievement-card .card-details h4 {
+            color: #8fd9b6;
+            margin: 15px 0 10px 0;
+            font-size: 1rem;
+        }
+
+        .achievement-card .card-details p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+            to {
+                opacity: 1;
+                max-height: 500px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -611,6 +725,7 @@
     <nav>
         <ul>
             <li><a href="#about" onclick="scrollTo('about')">About</a></li>
+            <li><a href="#experience" onclick="scrollTo('experience')">Experience</a></li>
             <li><a href="#skills" onclick="scrollTo('skills')">Skills</a></li>
             <li><a href="#projects" onclick="scrollTo('projects')">Projects</a></li>
             <li><a href="#academics" onclick="scrollTo('academics')">Academics</a></li>
@@ -644,6 +759,21 @@
                 <p style="margin-bottom: 20px;">I thrive in building scalable full-stack solutions, IoT hardware prototypes, and DevOps infrastructure. From architecting national-level CTF competitions to completing <strong>Stanford's Machine Learning Specialization</strong>, I'm committed to pushing the boundaries of technology through continuous learning and practical application.</p>
                 
                 <p>When I'm not coding, you'll find me maintaining my home lab with virtualized servers, Docker containers, and enterprise-grade monitoring tools—constantly learning and innovating.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-card">
+            <h2>Professional Experience</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Winter Intern at IIT Ropar</h3>
+                    <p><strong>NPTEL Winter Internship 2025</strong> - Currently a Winter Intern at IIT Ropar, focusing on full-stack development using the MERN stack to build scalable, high-performance web architectures that complement complex backend systems. Selected for this prestigious 4-week virtual internship program based on Elite + Silver performance (Top 5%) in "Joy of Computing Using Python" course.</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;"><em>Duration: December 22, 2025 - January 18, 2026 | Focus: MERN Stack Development | Mode: Virtual</em></p>
+                    <a href="#" onclick="openInternModal(event)" class="project-link">View Weekly Progress</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1097,49 +1227,190 @@
         <div class="section-card">
             <h2>Achievements</h2>
             <div class="about-content">
+                <!-- Featured Achievements (Always Visible) -->
                 <ul style="text-align: left; max-width: 900px; margin: 0 auto; list-style: none; padding: 0;">
-                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
-                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Completed Machine Learning Specialization</strong>
-                        <p style="margin: 8px 0 0 0; opacity: 0.9;">Stanford University & DeepLearning.AI - December 2025</p>
-                        <p style="margin: 8px 0 0 0; font-size: 0.9rem;">Comprehensive program covering supervised learning, unsupervised learning, and reinforcement learning algorithms</p>
+                    <li class="achievement-card" style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;" onclick="toggleAchievementCard(this)">
+                        <div class="expand-indicator">▼</div>
+                        <div class="card-summary">
+                            <strong style="font-size: 1.1rem; color: #8fd9b6;">Machine Learning Specialization</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">Stanford University & DeepLearning.AI</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">December 2025</p>
+                            <p style="margin: 10px 0 0 0; font-size: 0.9rem;"><em>3-course series covering supervised learning, unsupervised learning, and advanced algorithms. Hands-on experience with Python, TensorFlow, and scikit-learn.</em></p>
+                        </div>
+                        <div class="card-details">
+                            <h4>About the Program</h4>
+                            <p>After an immersive learning journey, I successfully completed this world-class program offered by DeepLearning.AI and Stanford University on Coursera. This comprehensive 3-course series demanded a deep dive into the core of AI, covering everything from Supervised and Unsupervised Learning to Advanced Learning Algorithms.</p>
+                            <h4>Technical Skills Gained</h4>
+                            <p>Gained hands-on experience building and training models using Python, TensorFlow, and scikit-learn, moving beyond theory to practical implementation of Neural Networks, Decision Trees, and Recommender Systems.</p>
+                            <h4>Impact</h4>
+                            <p>Receiving this certification from Stanford Online represents a comprehensive understanding of the mathematical underpinnings and best practices used in Silicon Valley for AI innovation. The structured learning significantly solidified my technical foundation, preparing me to tackle more complex challenges in Data Science and AI.</p>
+                        </div>
                     </li>
                     
-                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
-                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Shortlisted for AICTE Productization Fellowship (APF) 2025</strong>
-                        <p style="margin: 8px 0 0 0; opacity: 0.9;">All India Council for Technical Education</p>
-                        <p style="margin: 8px 0 0 0; font-size: 0.9rem;">Selected for the AICTE Productization Fellowship program focused on transforming innovative ideas into market-ready products</p>
+                    <li class="achievement-card" style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;" onclick="toggleAchievementCard(this)">
+                        <div class="expand-indicator">▼</div>
+                        <div class="card-summary">
+                            <strong style="font-size: 1.1rem; color: #8fd9b6;">AICTE Productization Fellowship (APF) 2025</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">Shortlisted - Team Ayunex</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">All India Council for Technical Education</p>
+                            <p style="margin: 10px 0 0 0; font-size: 0.9rem;"><em>Selected for the fellowship program focused on transforming innovative ideas into market-ready products.</em></p>
+                        </div>
+                        <div class="card-details">
+                            <h4>About the Fellowship</h4>
+                            <p>Being part of the Ayunex team has been an incredible journey, and we're excited to have been shortlisted for the AICTE Productization Fellowship. This prestigious program focuses on transforming innovative ideas into market-ready products.</p>
+                            <h4>Team Achievement</h4>
+                            <p>This is a massive milestone for our entire team and testament to the hard work, late nights, and relentless passion we've poured into our innovation. Team members: Ashna Thajudheen and Devika Sajith, with guidance from mentor Dr. Amrutha Muralidharan Nair.</p>
+                        </div>
                     </li>
                     
-                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
-                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Shortlisted for YUKTI Innovation Challenge (YIC) 2025</strong>
-                        <p style="margin: 8px 0 0 0; opacity: 0.9;">Ministry of Education's Innovation Cell</p>
-                        <p style="margin: 8px 0 0 0; font-size: 0.9rem;">Recognized for innovative project proposal in national-level innovation challenge</p>
+                    <li class="achievement-card" style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;" onclick="toggleAchievementCard(this)">
+                        <div class="expand-indicator">▼</div>
+                        <div class="card-summary">
+                            <strong style="font-size: 1.1rem; color: #8fd9b6;">YUKTI Innovation Challenge (YIC) 2025</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">Shortlisted - Team Ayunex</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Ministry of Education's Innovation Cell</p>
+                            <p style="margin: 10px 0 0 0; font-size: 0.9rem;"><em>Recognized for innovative project proposal in national-level innovation challenge.</em></p>
+                        </div>
+                        <div class="card-details">
+                            <h4>Double Achievement</h4>
+                            <p>Ayunex has been honored to be shortlisted for BOTH the AICTE Productization Fellowship (APF) and the YUKTI Innovation Challenge (YIC) 2025. This dual recognition represents a significant milestone for our healthcare innovation.</p>
+                            <h4>Innovation Focus</h4>
+                            <p>Our project focuses on elderly healthcare innovation, addressing critical gaps in healthcare technology. The recognition from the Ministry of Education's Innovation Cell validates our approach to making healthcare more accessible and effective.</p>
+                        </div>
                     </li>
                     
-                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
-                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Top 5% NPTEL Performer</strong>
-                        <p style="margin: 8px 0 0 0; opacity: 0.9;">Elite + Silver Certification</p>
-                        <p style="margin: 8px 0 0 0; font-size: 0.9rem;">Achieved top 5% ranking in NPTEL's Joy of Computing Using Python and Fundamentals of Artificial Intelligence courses</p>
+                    <li class="achievement-card" style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;" onclick="toggleAchievementCard(this)">
+                        <div class="expand-indicator">▼</div>
+                        <div class="card-summary">
+                            <strong style="font-size: 1.1rem; color: #8fd9b6;">NPTEL Elite + Silver (Top 5%)</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">Joy of Computing Using Python & Fundamentals of AI</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">IIT Ropar & IIT Guwahati</p>
+                            <p style="margin: 10px 0 0 0; font-size: 0.9rem;"><em>Achieved top 5% ranking in computational thinking and AI fundamentals courses.</em></p>
+                        </div>
+                        <div class="card-details">
+                            <h4>Joy of Computing Using Python</h4>
+                            <p>Secured a spot in the Top 5% (Elite + Silver) in this course conducted by Prof. Sudarshan Iyengar (IIT Ropar). This course was an incredible journey into computational thinking and creative problem solving with Python, truly living up to its name.</p>
+                            <h4>Fundamentals of Artificial Intelligence</h4>
+                            <p>Completed rigorous 12-week journey in AI fundamentals offered by IIT Guwahati, achieving Elite certification with 83% consolidated score. The performance secured a spot in the Top 5% of all certified candidates (out of 3795).</p>
+                            <h4>Technical Foundation</h4>
+                            <p>The structured learning significantly solidified technical foundation in computational thinking and AI algorithms, preparing for more complex challenges in Data Science and AI.</p>
+                        </div>
                     </li>
                     
-                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
-                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Semi-Finalist in National Cybersecurity Hackathon</strong>
-                        <p style="margin: 8px 0 0 0; opacity: 0.9;">HackathonX - National Cyber Security Research Council</p>
-                        <p style="margin: 8px 0 0 0; font-size: 0.9rem;">Competed in national-level cybersecurity hackathon conducted by NCSRC at University of Calicut</p>
-                    </li>
-                    
-                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
-                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Global Rank #376 in IEEE Xtreme 17.0</strong>
-                        <p style="margin: 8px 0 0 0; opacity: 0.9;">IEEE International Programming Competition</p>
-                        <p style="margin: 8px 0 0 0; font-size: 0.9rem;">Achieved top global ranking in 24-hour competitive programming challenge</p>
-                    </li>
-                    
-                    <li style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;">
-                        <strong style="font-size: 1.1rem; color: #8fd9b6;">Academic Excellence - SGPA 9.59</strong>
-                        <p style="margin: 8px 0 0 0; opacity: 0.9;">4th Semester, B.Tech CSE (AI)</p>
-                        <p style="margin: 8px 0 0 0; font-size: 0.9rem;">Demonstrated outstanding academic performance in Computer Science and Artificial Intelligence program</p>
+                    <li class="achievement-card" style="padding: 20px; margin-bottom: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 12px; border-left: 4px solid #6dd5a8;" onclick="toggleAchievementCard(this)">
+                        <div class="expand-indicator">▼</div>
+                        <div class="card-summary">
+                            <strong style="font-size: 1.1rem; color: #8fd9b6;">Runner-Up — INNOVISION 2025</strong>
+                            <p style="margin: 5px 0; opacity: 0.9;">Team Kairos - ASIET ACM Idea Pitching Competition</p>
+                            <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Adi Shankara Institute of Engineering and Technology</p>
+                            <p style="margin: 10px 0 0 0; font-size: 0.9rem;"><em>Led team to second place with cybersecurity solution focused on digital safety accessibility. Teammates: Keerthana Vinod and C Raniya Nazrine.</em></p>
+                        </div>
+                        <div class="card-details">
+                            <h4>Competition Details</h4>
+                            <p>Team Kairos secured the Runner-Up title at INNOVISION 2025, the flagship Idea Pitching Competition organized by the ASIET ACM Student Chapter. Competing against some of the most creative minds at Adi Shankara Institute of Engineering and Technology, Kalady was an exhilarating experience.</p>
+                            <h4>Project Focus</h4>
+                            <p>Our pitch centered on a specialized solution for cybersecurity and personal protection, designed to make digital safety accessible to everyone. As Team Lead, I guided the project from the brainstorming phase to the final presentation.</p>
+                            <h4>Leadership Experience</h4>
+                            <p>The highlight was the intense Q&A session—defending our technical vision and demonstrating the real-world impact of our solution. This victory reflects our team's synergy and collaborative spirit.</p>
+                        </div>
                     </li>
                 </ul>
+
+                <!-- Expandable Button -->
+                <div style="text-align: center; margin: 30px 0 20px 0;">
+                    <button id="toggleAchievements" onclick="toggleAchievements()" style="background: linear-gradient(45deg, #6dd5a8, #4ecdc4); color: #0a1f1a; border: none; padding: 12px 30px; border-radius: 25px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(109, 213, 168, 0.3);">
+                        Show More Achievements ▼
+                    </button>
+                </div>
+
+                <!-- Additional Achievements (Initially Hidden) -->
+                <div id="additionalAchievements" style="display: none; max-width: 900px; margin: 0 auto; overflow: hidden; transition: all 0.5s ease;">
+                    <ul style="text-align: left; list-style: none; padding: 0;">
+                        <li class="achievement-card" style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;" onclick="toggleAchievementCard(this)">
+                            <div class="expand-indicator">▼</div>
+                            <div class="card-summary">
+                                <strong style="color: #8fd9b6;">CTF Competition - Prayag '25</strong>
+                                <p style="margin: 5px 0; opacity: 0.9;">Architect & Host - National-level tech fest</p>
+                                <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">ASIET Department of AI & Data Science</p>
+                                <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>Designed challenges, built server environment, and hosted 90-minute cybersecurity competition for national participants.</em></p>
+                            </div>
+                            <div class="card-details">
+                                <h4>Event Overview</h4>
+                                <p>Organized the Capture The Flag (CTF), a headline event at Prayag '25, the national-level tech fest of Department of Artificial Intelligence & Data Science, Adi Shankara Institute of Engineering and Technology, Kalady.</p>
+                                <h4>Technical Implementation</h4>
+                                <p>I was thrilled to architect and execute the technical backbone of this event. This involved designing intricate challenges from scratch, building a self-contained server environment, and hosting the entire competition live from my laptop.</p>
+                                <h4>Impact</h4>
+                                <p>Condensed a full-scale cybersecurity challenge into an intense, 90-minute hackathon. The room was electric, with some of the brightest minds racing against the clock to solve complex problems. Events like these are vital for building the next generation of cybersecurity talent.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="achievement-card" style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;" onclick="toggleAchievementCard(this)">
+                            <div class="expand-indicator">▼</div>
+                            <div class="card-summary">
+                                <strong style="color: #8fd9b6;">CineHack.AI - Anti-Piracy Solution</strong>
+                                <p style="margin: 5px 0; opacity: 0.9;">Team Lead - CineShield Project</p>
+                                <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">Federal Institute of Science and Technology</p>
+                                <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>48-hour film-tech hackathon developing AI-powered content protection system with cross-platform deployment.</em></p>
+                            </div>
+                            <div class="card-details">
+                                <h4>Project Innovation</h4>
+                                <p>During 48 incredible hours at CineHack.AI, our team built "CineShield," an innovative anti-piracy content protection system. We developed advanced AI to create unique audio-visual fingerprints for content, enabling real-time detection and tracing of pirated media.</p>
+                                <h4>Technical Achievement</h4>
+                                <p>One of the most proud accomplishments was our comprehensive analytics and management portal. We successfully deployed the front-end across Web, Android, Windows, and Linux, making it a truly versatile solution.</p>
+                                <h4>Team Collaboration</h4>
+                                <p>This experience was made possible by phenomenal teammates Devika Sajith and Ashna Thajudheen. Their talent, dedication, and collaborative spirit were the driving force behind CineShield through late nights and creative breakthroughs.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="achievement-card" style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;" onclick="toggleAchievementCard(this)">
+                            <div class="expand-indicator">▼</div>
+                            <div class="card-summary">
+                                <strong style="color: #8fd9b6;">HackathonX Semi-Finalist</strong>
+                                <p style="margin: 5px 0; opacity: 0.9;">National Cybersecurity Challenge</p>
+                                <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">National Cyber Security Research Council & University of Calicut</p>
+                                <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>Qualified for semi-finals in prestigious national-level cybersecurity competition.</em></p>
+                            </div>
+                            <div class="card-details">
+                                <h4>Competition Achievement</h4>
+                                <p>Our team qualified for the Semi-Finals of Hackathon X, a prestigious national-level cybersecurity challenge organized by the National Cyber Security Research Council (NCSRC) in association with AICTE.</p>
+                                <h4>Event Details</h4>
+                                <p>The semi-finals were held at University of Calicut, Thenhipalam, Kerala. This achievement represents our team's technical skills and problem-solving capabilities in cybersecurity challenges.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="achievement-card" style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;" onclick="toggleAchievementCard(this)">
+                            <div class="expand-indicator">▼</div>
+                            <div class="card-summary">
+                                <strong style="color: #8fd9b6;">IEEE Xtreme 17.0 - Global Rank #376</strong>
+                                <p style="margin: 5px 0; opacity: 0.9;">International Programming Competition</p>
+                                <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">IEEE Computer Society</p>
+                                <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>Achieved top global ranking in 24-hour competitive programming challenge.</em></p>
+                            </div>
+                            <div class="card-details">
+                                <h4>Competition Format</h4>
+                                <p>IEEE Xtreme is a 24-hour competitive programming challenge where teams solve algorithmic problems under intense time pressure. Achieving global rank #376 demonstrates strong problem-solving skills and algorithmic thinking.</p>
+                                <h4>Technical Skills</h4>
+                                <p>The competition tests proficiency in data structures, algorithms, mathematics, and programming under pressure. This ranking places performance among the top competitive programmers globally.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="achievement-card" style="padding: 18px; margin-bottom: 12px; background: rgba(109, 213, 168, 0.05); border-radius: 10px; border-left: 3px solid #6dd5a8;" onclick="toggleAchievementCard(this)">
+                            <div class="expand-indicator">▼</div>
+                            <div class="card-summary">
+                                <strong style="color: #8fd9b6;">Academic Excellence</strong>
+                                <p style="margin: 5px 0; opacity: 0.9;">SGPA 9.59 (4th Semester)</p>
+                                <p style="margin: 5px 0; font-size: 0.9rem; opacity: 0.7;">B.Tech CSE (Artificial Intelligence)</p>
+                                <p style="margin: 8px 0 0 0; font-size: 0.85rem;"><em>Outstanding academic performance in Computer Science and Artificial Intelligence program.</em></p>
+                            </div>
+                            <div class="card-details">
+                                <h4>Academic Performance</h4>
+                                <p>Demonstrated outstanding academic performance with SGPA 9.59 in the 4th semester of B.Tech Computer Science and Engineering (Artificial Intelligence) program at Adi Shankara Institute of Engineering and Technology.</p>
+                                <h4>Program Focus</h4>
+                                <p>The AI specialization covers advanced topics in machine learning, deep learning, data science, and artificial intelligence, requiring strong mathematical foundation and programming skills.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -1272,6 +1543,100 @@
                 <p style="margin-top: 30px; text-align: center; font-style: italic; color: #6dd5a8;">
                     Private Repository - Comprehensive technical documentation available upon request
                 </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Internship Modal -->
+    <div id="internModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeInternModal()">&times;</span>
+                <h2>Winter Internship — NPTEL (IIT Ropar)</h2>
+            </div>
+            <div class="modal-body">
+                <div class="tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="description" onclick="switchInternTab(event)">Description</button>
+                        <button class="tab-button" data-tab="week0" onclick="switchInternTab(event)">Week 0</button>
+                        <button class="tab-button locked" data-tab="week1" onclick="switchInternTab(event)">Week 1</button>
+                        <button class="tab-button locked" data-tab="week2" onclick="switchInternTab(event)">Week 2</button>
+                        <button class="tab-button locked" data-tab="week3" onclick="switchInternTab(event)">Week 3</button>
+                        <button class="tab-button locked" data-tab="week4" onclick="switchInternTab(event)">Week 4</button>
+                        <button class="tab-button locked" data-tab="project" onclick="switchInternTab(event)">Project</button>
+                    </div>
+
+                    <div id="internTabContent" class="tab-content">
+                        <div id="description" class="tab-pane">
+                            <h3>NPTEL Winter Internship 2025 - MERN Stack Development</h3>
+                            <p><strong>Institution:</strong> Indian Institute of Technology, Ropar</p>
+                            <p><strong>Mentor:</strong> Prof. Sudarshan Iyengar</p>
+                            <p><strong>Duration:</strong> 4 weeks (December 22, 2025 - January 18, 2026)</p>
+                            <p><strong>Mode:</strong> Virtual Learning</p>
+                            <p><strong>Focus:</strong> Full-Stack Development using MERN Stack</p>
+                            
+                            <h4>Selection Criteria</h4>
+                            <p>Selected based on Elite + Silver performance (Top 5%) in "The Joy of Computing Using Python" course, demonstrating exceptional competency in programming fundamentals and problem-solving skills.</p>
+                            
+                            <h4>Program Focus</h4>
+                            <p>Currently focusing on full-stack development using the MERN stack (MongoDB, Express.js, React.js, Node.js) to build scalable, high-performance web architectures that complement complex backend systems. The program emphasizes practical application of modern web development technologies and industry best practices.</p>
+                            
+                            <h4>Learning Objectives</h4>
+                            <ul style="margin-left: 20px;">
+                                <li>Full-stack web development with MERN stack</li>
+                                <li>Building scalable and high-performance web applications</li>
+                                <li>Database design and management with MongoDB</li>
+                                <li>RESTful API development with Express.js and Node.js</li>
+                                <li>Modern frontend development with React.js</li>
+                                <li>Integration of complex backend systems</li>
+                                <li>Industry-standard development workflows and practices</li>
+                            </ul>
+                            
+                            <h4>Future Scope</h4>
+                            <p>Upon successful completion of MERN stack development, the internship may expand to include additional projects and technologies, providing broader exposure to modern development paradigms.</p>
+                        </div>
+                        <div id="week0" class="tab-pane" style="display:none;">
+                            <h3>Securing the Spot: NPTEL Winter Internship 2025!</h3>
+                            <p>Thrilled and deeply honored to announce a significant milestone in my academic journey: I have been selected for the NPTEL Winter Internship 2025!</p>
+                            <p>This opportunity is a direct result of my performance in one of the most engaging courses I've taken: <strong>The Joy of Computing Using Python</strong>, conducted by Prof. Sudarshan Iyengar from IIT Ropar. Achieving the Top 5% (Elite + Silver) status in the course has paved the way for this invitation, proving that dedicated learning truly opens doors.</p>
+                            <p>I am excited to accept the offer for this intensive, 4-week virtual internship, commencing on <strong>December 22, 2025</strong>. The internship focuses on full-stack development using the MERN stack, allowing me to build scalable, high-performance web architectures and deepen my expertise in modern web development technologies.</p>
+                            <p>I look forward to mastering MongoDB, Express.js, React.js, and Node.js while working on real-world projects that complement complex backend systems.</p>
+                            <p style="margin-top: 20px; padding: 15px; background: rgba(109, 213, 168, 0.1); border-radius: 8px; border-left: 3px solid #6dd5a8;">
+                                <strong>Internship Timeline:</strong><br>
+                                📅 Start Date: December 22, 2025<br>
+                                📅 End Date: January 18, 2026<br>
+                                🎯 Duration: 4 intensive weeks<br>
+                                💻 Mode: Virtual Learning<br>
+                                🛠️ Focus: MERN Stack Development
+                            </p>
+                        </div>
+                        <div id="week1" class="tab-pane" style="display:none;">
+                            <h3>Week 1 - Coming Soon!</h3>
+                            <p class="locked-note">📅 <strong>Release Date:</strong> December 28, 2025</p>
+                            <p>Week 1 content will be updated once the internship progresses. Stay tuned for exciting updates on MERN stack fundamentals, MongoDB setup, and initial full-stack development challenges!</p>
+                        </div>
+                        <div id="week2" class="tab-pane" style="display:none;">
+                            <h3>Week 2 - Coming Soon!</h3>
+                            <p class="locked-note">📅 <strong>Release Date:</strong> January 4, 2026</p>
+                            <p>Week 2 activities and learning outcomes will be shared here. Expect deeper dives into Express.js backend development, React.js frontend components, and API integration!</p>
+                        </div>
+                        <div id="week3" class="tab-pane" style="display:none;">
+                            <h3>Week 3 - Coming Soon!</h3>
+                            <p class="locked-note">📅 <strong>Release Date:</strong> January 11, 2026</p>
+                            <p>Week 3 will focus on advanced MERN stack implementations, performance optimization, and scalable architecture patterns. Documentation and insights coming soon!</p>
+                        </div>
+                        <div id="week4" class="tab-pane" style="display:none;">
+                            <h3>Week 4 - Coming Soon!</h3>
+                            <p class="locked-note">📅 <strong>Release Date:</strong> January 18, 2026</p>
+                            <p>The final week will showcase the complete MERN stack application, deployment strategies, and comprehensive project reflections. Updates coming at program completion!</p>
+                        </div>
+                        <div id="project" class="tab-pane" style="display:none;">
+                            <h3>MERN Stack Project - In Development</h3>
+                            <p class="locked-note">📋 <strong>Status:</strong> Project will be updated shortly</p>
+                            <p>The complete MERN stack application details, implementation approach, and final results will be documented here upon completion. This will showcase the practical application of MongoDB, Express.js, React.js, and Node.js in building scalable web architectures.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1423,15 +1788,83 @@
             document.body.style.overflow = 'auto';
         }
 
+        // Internship modal functions and tab handling
+        function openInternModal(event) {
+            event.preventDefault();
+            document.getElementById('internModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            // ensure Description is visible by default
+            activateInternTab('description');
+        }
+
+        function closeInternModal() {
+            document.getElementById('internModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function switchInternTab(event) {
+            const btn = event.currentTarget || event.target;
+            const tab = btn.getAttribute('data-tab');
+
+            // If clicked tab is locked, show locked message
+            if (btn.classList.contains('locked')) {
+                // visually set active on the locked button briefly
+                document.querySelectorAll('#internModal .tab-button').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                showInternTabContent(tab, true);
+                return;
+            }
+
+            // normal switch
+            document.querySelectorAll('#internModal .tab-button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            showInternTabContent(tab, false);
+        }
+
+        function activateInternTab(tabId) {
+            document.querySelectorAll('#internModal .tab-button').forEach(b => b.classList.remove('active'));
+            const btn = document.querySelector('#internModal .tab-button[data-tab="' + tabId + '"]');
+            // fallback: select first button
+            const first = document.querySelector('#internModal .tab-button');
+            if (btn) btn.classList.add('active'); else if (first) first.classList.add('active');
+            showInternTabContent(tabId, false);
+        }
+
+        function showInternTabContent(tabId, locked) {
+            const panes = document.querySelectorAll('#internModal .tab-pane');
+            panes.forEach(p => p.style.display = 'none');
+
+            const target = document.getElementById(tabId);
+            if (!target) return;
+
+            if (locked) {
+                // show locked-note message only
+                target.style.display = 'block';
+                target.innerHTML = '<p class="locked-note">Locked — Securing the Spot: NPTEL Winter Internship 2025!</p>';
+            } else {
+                // restore known content for description and week0 tabs
+                if (tabId === 'description' || tabId === 'week0') {
+                    target.style.display = 'block';
+                    // content already in markup
+                } else {
+                    target.style.display = 'block';
+                }
+            }
+        }
+
         // Close modal when clicking outside
         window.onclick = function(event) {
             const arcanumModal = document.getElementById('arcanumModal');
             const antiPiracyModal = document.getElementById('antiPiracyModal');
+            const internModal = document.getElementById('internModal');
             if (event.target == arcanumModal) {
                 closeArcanumModal();
             }
             if (event.target == antiPiracyModal) {
                 closeAntiPiracyModal();
+            }
+            if (event.target == internModal) {
+                closeInternModal();
             }
         }
 
@@ -1440,6 +1873,7 @@
             if (event.key === 'Escape') {
                 closeArcanumModal();
                 closeAntiPiracyModal();
+                closeInternModal();
             }
         });
 
@@ -1461,6 +1895,38 @@
                 additionalCerts.style.display = 'none';
                 toggleBtn.innerHTML = 'Show All Certifications ▼';
                 toggleBtn.style.background = 'linear-gradient(45deg, #6dd5a8, #4ecdc4)';
+            }
+        }
+
+        // Toggle achievements visibility
+        function toggleAchievements() {
+            const additionalAchievements = document.getElementById('additionalAchievements');
+            const toggleBtn = document.getElementById('toggleAchievements');
+            
+            if (additionalAchievements.style.display === 'none' || additionalAchievements.style.display === '') {
+                additionalAchievements.style.display = 'block';
+                toggleBtn.innerHTML = 'Show Less Achievements ▲';
+                toggleBtn.style.background = 'linear-gradient(45deg, #4ecdc4, #45b7d1)';
+                
+                // Smooth scroll to show the expanded content
+                setTimeout(() => {
+                    additionalAchievements.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            } else {
+                additionalAchievements.style.display = 'none';
+                toggleBtn.innerHTML = 'Show More Achievements ▼';
+                toggleBtn.style.background = 'linear-gradient(45deg, #6dd5a8, #4ecdc4)';
+            }
+        }
+
+        // Toggle individual achievement card expansion
+        function toggleAchievementCard(card) {
+            const isExpanded = card.classList.contains('expanded');
+            
+            if (isExpanded) {
+                card.classList.remove('expanded');
+            } else {
+                card.classList.add('expanded');
             }
         }
 
