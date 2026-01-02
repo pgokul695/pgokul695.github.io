@@ -1,3 +1,11 @@
+# ⚠️ ARCHIVED
+
+**This repository and website have been archived.** The portfolio has moved to [gokulp.in](https://gokulp.in).
+
+This GitHub Pages site will automatically redirect visitors to the new location.
+
+---
+
 ## License
 
 ### The Code
