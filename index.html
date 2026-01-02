@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5;url=https://gokulp.in">
     <title>Gokul P - Technical Architect | AI & Cybersecurity Expert | Portfolio</title>
     
     <meta name="description" content="Gokul P - Technical Architect specializing in AI, Machine Learning, and Cybersecurity. B.Tech CSE student with expertise in secure infrastructure deployment, IoT systems, and competitive cybersecurity platforms. Machine Learning Specialization from Stanford University.">
@@ -52,6 +53,76 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        /* Archived Warning Banner */
+        .archived-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(30, 25, 15, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid rgba(213, 168, 109, 0.4);
+            color: #e0e0e0;
+            padding: 15px 20px;
+            text-align: center;
+            z-index: 9999;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.5s ease-out;
+        }
+
+        .archived-banner h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #6dd5a8, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .archived-banner p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            color: rgba(180, 230, 210, 0.9);
+        }
+
+        .archived-banner a {
+            color: #6dd5a8;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .archived-banner .redirect-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #6dd5a8, #4ecdc4);
+            color: #0a1f1a;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .archived-banner .redirect-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(109, 213, 168, 0.4);
+            background: linear-gradient(45deg, #8fd9b6, #5eddd4);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            padding-top: 120px;
         }
 
         body {
@@ -713,6 +784,13 @@
     </style>
 </head>
 <body>
+    <!-- Archived Site Warning Banner -->
+    <div class="archived-banner" id="archived-banner">
+        <h3>⚠️ This Site Has Been Archived</h3>
+        <p>This portfolio has moved to a new location. You will be automatically redirected in <span id="countdown">5</span> seconds.</p>
+        <p>Visit the new site: <a href="https://gokulp.in" class="redirect-btn">gokulp.in</a></p>
+    </div>
+
     <div class="particles" id="particles"></div>
 
     <nav>
@@ -1966,6 +2044,20 @@
             particles.innerHTML = '';
             createParticles();
         });
+
+        // Archived site redirect with countdown
+        let countdownTime = 5;
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdownInterval = setInterval(() => {
+            countdownTime--;
+            countdownElement.textContent = countdownTime;
+            
+            if (countdownTime <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = 'https://gokulp.in';
+            }
+        }, 1000);
     </script>
 </body>
 </html>
